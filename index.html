@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercicio 2</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      
+      <a-entity 
+        id="cameraRig" 
+        position="0 1.65 5"> 
+        <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
+      </a-entity>
+
+      <a-plane
+        id="chao"
+        class="ground"
+        position="0 0 0"
+        rotation="-90 0 0"
+        width="10"
+        height="20"
+        src="Textures/Wood_Cherry_Original_baseColor.jpeg"
+        repeat="10 20">
+      </a-plane>
+
+      <a-plane
+        id="teto"
+        position="0 5 0"
+        rotation="90 0 0"
+        width="10"
+        height="20"
+        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="10 20">
+      </a-plane>
+      
+      <a-plane 
+        id="frente"
+        position="0 2.5 -10"
+        rotation="0 0 0"
+        width="10"
+        height="5"
+        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="8 4">
+      </a-plane>
+
+      <a-plane 
+        id="esquerda"
+        position="-5 2.5 0"
+        rotation="0 90 0"
+        width="20"
+        height="5"
+        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="8 4">
+      </a-plane>
+
+      <a-plane 
+        id="direita"
+        position="5 2.5 0"
+        rotation="0 -90 0"
+        width="20"
+        height="5"
+        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="8 4">
+      </a-plane>
+
+      <a-plane  
+        id="tras"
+        position="0 2.5 10"
+        rotation="0 180 0"
+        width="10"
+        height="5"
+        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="8 4">
+      </a-plane>
+
+      <a-light 
+        type="point"
+        color="#ffdca8"
+        intensity="2"
+        distance="10"
+        position="0 4 0">
+      </a-light>
+
+      <a-light 
+        type="point"
+        color="#ffdca8"
+        intensity="2"
+        distance="10"
+        position="0 4 5">
+      </a-light>
+
+      <a-light 
+        type="point"
+        color="#ffdca8"
+        intensity="2"
+        distance="10"
+        position="0 4 -5">
+      </a-light>
+
+      <a-entity
+        id="escultura1"
+        gltf-model="url(Textures/Obras_arte/marble_classical_statue_man_01__3d_printable/scene.gltf)"
+        position="4 1.7 -5"
+        scale="3 3 3"
+        rotation="0 0 0">
+      </a-entity>
+
+      <a-entity
+        id="escultura2"
+        gltf-model="url(Textures/Obras_arte/marble_classical_statue_man_02__3d_printable/scene.gltf)"
+        position="4 1.7 5"
+        scale="3 3 3"
+        rotation="0 0 0">
+      </a-entity>
+
+      <a-box
+        id="caixa-busto"
+        position="4 0.25 0"
+        width="1"
+        height="0.5"
+        depth="1"
+        src="Obras_arte/marble_classical_bust_-_ia__3d_printable/textures/Material_baseColor.png">
+      </a-box>
+
+      <a-entity
+        id="busto"
+        gltf-model="url(Textures/Obras_arte/marble_classical_bust_-_ia__3d_printable/scene.gltf)"
+        position="4 1.5 0"
+        scale="2 2 2"
+        rotation="0 270 0">
+      </a-entity>
+
+      <a-entity
+        id="escudo"
+        gltf-model="url(Textures/Obras_arte/escudo_heraldico_en_ayerbe/scene.gltf)"
+        position="0 2 -9.8"
+        scale="2 2 2"
+        rotation="13 0 0">
+      </a-entity>
+    </a-scene> 
+  </body>
+</html>
