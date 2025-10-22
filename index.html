@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Exercicio 2</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+
   </head>
 
   <body>
@@ -13,6 +15,15 @@
         id="cameraRig" 
         position="0 0.65 5"> 
         <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
+
+        <a-entity id="leftHand" oculus-touch-controls="hand: left" 
+          aframe-extras="movement-controls: fly: false; controls: gamepad">
+        </a-entity>
+
+        <a-entity id="rightHand" oculus-touch-controls="hand: right" 
+          aframe-extras="movement-controls: fly: false; controls: gamepad">
+        </a-entity>
+        
       </a-entity>
 
       <a-plane
