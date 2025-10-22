@@ -5,19 +5,23 @@
     <title>Exercicio 2</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-teleport-controls@1.0.0/dist/aframe-teleport-controls.min.js"></script>
 
   </head>
 
   <body>
     <a-scene>
 
-<a-entity id="cameraRig" position="0 0 5" 
-          movement-controls="controls: gamepad; fly: false">
-  <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
+<a-entity id="cameraRig" position="0 0 5">
+  <a-camera></a-camera>
 
-  <!-- mãos apenas visuais (opcional) -->
-  <a-entity oculus-touch-controls="hand: left"></a-entity>
-  <a-entity oculus-touch-controls="hand: right"></a-entity>
+  <a-entity hand-controls="hand: left" 
+            teleport-controls="cameraRig: #cameraRig; button: trigger">
+  </a-entity>
+
+  <a-entity hand-controls="hand: right" 
+            teleport-controls="cameraRig: #cameraRig; button: trigger">
+  </a-entity>
 </a-entity>
 
       <a-plane
