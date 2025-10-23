@@ -18,7 +18,6 @@ AFRAME.registerComponent('botao', {
       height: data.height,
       depth: data.depth
     });
-
     el.setAttribute('material', {color: data.color});
     el.setAttribute('pressable', '');
 
@@ -30,13 +29,15 @@ AFRAME.registerComponent('botao', {
       align: 'right',
       width: 3
     });
-
     labelEl.setAttribute('scale', '0.75 0.75 0.75');
     el.appendChild(labelEl);
 
     this.bindMethods();
+
     el.addEventListener('pressedstarted', this.onPressedStarted);
     el.addEventListener('pressedended', this.onPressedEnded);
+
+    el.addEventListener('click', this.onPressedStarted);
   },
 
   bindMethods: function () {
@@ -46,6 +47,7 @@ AFRAME.registerComponent('botao', {
 
   onPressedStarted: function () {
     this.el.setAttribute('material', {color: 'pink'});
+
     this.el.emit('botao-clicado', {label: this.data.label});
   },
 
