@@ -1,0 +1,40 @@
+      <a-entity
+        id="escultura1"
+        gltf-model="url(./Textures/Obras_arte/marble_classical_statue_man_01__3d_printable/scene.gltf)"
+        position="4 1.7 -5"
+        scale="3 3 3"
+        rotation="0 0 0">
+      </a-entity>
+
+      <a-entity
+        id="escultura2"
+        gltf-model="url(./Textures/Obras_arte/marble_classical_statue_man_02__3d_printable/scene.gltf)"
+        position="4 1.7 5"
+        scale="3 3 3"
+        rotation="0 0 0">
+      </a-entity>
+
+      <a-box
+        id="caixa-busto"
+        position="4 0.25 0"
+        width="1"
+        height="0.5"
+        depth="1"
+        src="./Obras_arte/marble_classical_bust_-_ia__3d_printable/textures/Material_baseColor.png">
+      </a-box>
+
+      <a-entity
+        id="busto"
+        gltf-model="url(./Textures/Obras_arte/marble_classical_bust_-_ia__3d_printable/scene.gltf)"
+        position="4 1.5 0"
+        scale="2 2 2"
+        rotation="0 270 0">
+      </a-entity>
+
+      <a-entity
+        id="escudo"
+        gltf-model="url(./Textures/Obras_arte/escudo_heraldico_en_ayerbe/scene.gltf)"
+        position="0 2 -9.8"
+        scale="2 2 2"
+        rotation="13 0 0">
+      </a-entity>
