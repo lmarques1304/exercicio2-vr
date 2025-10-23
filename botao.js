@@ -45,9 +45,8 @@ AFRAME.registerComponent('botao', {
   },
 
   onPressedStarted: function () {
-    var el = this.el;
-    el.setAttribute('material', {color: 'green'});
-    el.emit('click'); 
+    this.el.setAttribute('material', {color: 'pink'});
+    this.el.emit('botao-clicado', {label: this.data.label});
   },
 
   onPressedEnded: function () {
