@@ -39,7 +39,7 @@
         rotation="-90 0 0"
         width="10"
         height="20"
-        src="Textures/Wood_Cherry_Original_baseColor.jpeg"
+        src="./Textures/Wood_Cherry_Original_baseColor.jpeg"
         repeat="10 20">
       </a-plane>
 
@@ -49,7 +49,7 @@
         rotation="90 0 0"
         width="10"
         height="20"
-        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
         repeat="10 20">
       </a-plane>
       
@@ -59,7 +59,7 @@
         rotation="0 0 0"
         width="10"
         height="5"
-        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
         repeat="8 4">
       </a-plane>
 
@@ -69,7 +69,7 @@
         rotation="0 90 0"
         width="20"
         height="5"
-        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
         repeat="8 4">
       </a-plane>
 
@@ -79,7 +79,7 @@
         rotation="0 -90 0"
         width="20"
         height="5"
-        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
         repeat="8 4">
       </a-plane>
 
@@ -89,7 +89,7 @@
         rotation="0 180 0"
         width="10"
         height="5"
-        src="Textures/Cladding_Stucco_White_baseColor.jpeg"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
         repeat="8 4">
       </a-plane>
 
@@ -119,7 +119,7 @@
 
       <a-entity
         id="escultura1"
-        gltf-model="url(Textures/Obras_arte/marble_classical_statue_man_01__3d_printable/scene.gltf)"
+        gltf-model="url(./Textures/Obras_arte/marble_classical_statue_man_01__3d_printable/scene.gltf)"
         position="4 1.7 -5"
         scale="3 3 3"
         rotation="0 0 0">
@@ -127,7 +127,7 @@
 
       <a-entity
         id="escultura2"
-        gltf-model="url(Textures/Obras_arte/marble_classical_statue_man_02__3d_printable/scene.gltf)"
+        gltf-model="url(./Textures/Obras_arte/marble_classical_statue_man_02__3d_printable/scene.gltf)"
         position="4 1.7 5"
         scale="3 3 3"
         rotation="0 0 0">
@@ -139,12 +139,12 @@
         width="1"
         height="0.5"
         depth="1"
-        src="Obras_arte/marble_classical_bust_-_ia__3d_printable/textures/Material_baseColor.png">
+        src="./Obras_arte/marble_classical_bust_-_ia__3d_printable/textures/Material_baseColor.png">
       </a-box>
 
       <a-entity
         id="busto"
-        gltf-model="url(Textures/Obras_arte/marble_classical_bust_-_ia__3d_printable/scene.gltf)"
+        gltf-model="url(./Textures/Obras_arte/marble_classical_bust_-_ia__3d_printable/scene.gltf)"
         position="4 1.5 0"
         scale="2 2 2"
         rotation="0 270 0">
@@ -152,7 +152,7 @@
 
       <a-entity
         id="escudo"
-        gltf-model="url(Textures/Obras_arte/escudo_heraldico_en_ayerbe/scene.gltf)"
+        gltf-model="url(./Textures/Obras_arte/escudo_heraldico_en_ayerbe/scene.gltf)"
         position="0 2 -9.8"
         scale="2 2 2"
         rotation="13 0 0">
@@ -196,7 +196,7 @@
       const tela = document.querySelector('#tela');
 
       botao.addEventListener('click', () => {
-      tela.setAttribute('tela', 'imagem', 'Textures/Quadros/monalisa.webp');
+      tela.setAttribute('tela', 'imagem', './Textures/Quadros/monalisa.webp');
       });
     </script>
 
