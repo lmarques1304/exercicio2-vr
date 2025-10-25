@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <title>Exercicio 2</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
-    <script src="https://unpkg.com/aframe-teleport-controls@1.0.0/dist/aframe-teleport-controls.min.js"></script>
     <script src="menu.js"></script>
     <script src="botao.js"></script>
     <script src="tela.js"></script>
@@ -15,21 +13,13 @@
   <body>
     <a-scene>
 
-<a-entity id="cameraRig" position="1 0.65 0" movement-controls="fly: false; controls: gamepad">
-  <a-camera look-controls="enabled: true"></a-camera>
-
-  <a-entity hand-controls="hand: left"></a-entity>
-  <a-entity hand-controls="hand: right"></a-entity>
-</a-entity>
-
-
       <a-plane
         id="chao"
         class="ground"
         position="0 0 0"
         rotation="-90 0 0"
         width="10"
-        height="20"
+        height="10"
         src="./Textures/Wood_Cherry_Original_baseColor.jpeg"
         repeat="10 20">
       </a-plane>
@@ -39,18 +29,18 @@
         position="0 5 0"
         rotation="90 0 0"
         width="10"
-        height="20"
-        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        height="10"
+        color="white"
         repeat="10 20">
       </a-plane>
       
       <a-plane 
         id="frente"
-        position="0 2.5 -10"
+        position="0 2.5 -5"
         rotation="0 0 0"
         width="10"
         height="5"
-        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        color="white"
         repeat="8 4">
       </a-plane>
 
@@ -58,9 +48,9 @@
         id="esquerda"
         position="-5 2.5 0"
         rotation="0 90 0"
-        width="20"
+        width="10"
         height="5"
-        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        color="white"
         repeat="8 4">
       </a-plane>
 
@@ -68,19 +58,19 @@
         id="direita"
         position="5 2.5 0"
         rotation="0 -90 0"
-        width="20"
+        width="10"
         height="5"
-        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        color="white"
         repeat="8 4">
       </a-plane>
 
       <a-plane  
         id="tras"
-        position="0 2.5 10"
+        position="0 2.5 5"
         rotation="0 180 0"
         width="10"
         height="5"
-        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        color="white"
         repeat="8 4">
       </a-plane>
 
@@ -92,67 +82,10 @@
         position="0 4 0">
       </a-light>
 
-      <a-light 
-        type="point"
-        color="#ffdca8"
-        intensity="2"
-        distance="10"
-        position="0 4 5">
-      </a-light>
-
-      <a-light 
-        type="point"
-        color="#ffdca8"
-        intensity="2"
-        distance="10"
-        position="0 4 -5">
-      </a-light>
-
-      <a-entity
-        id="menu" 
-        menu position="0 1 0" 
-        rotation="-45 90 0" 
-        event-manager>
-      </a-entity>
-
-      <a-box
-        position="0 0.5 0"
-        rotation="90 0 0"
-        width="0.05"
-        height="0.9"
-        depth="0.95"
-        color="white"
-      ></a-box>
-
-      <a-entity 
-        id="tela" 
-        tela
-        position="-4.9 3 0"
-        scale="2.5 2.5 2.5"
-        rotation="0 90 0">
-      </a-entity>
-
-        <a-entity 
-          botao="label: Monalisa" 
-          position="-0.15 1.175 0.8"
-          rotation="-45 90 0">
-        </a-entity>
-
     </a-scene> 
 
     <script>
-      const tela = document.querySelector('#tela');
 
-      document.querySelectorAll('[botao]').forEach(botao => {
-        botao.addEventListener('botao-clicado', (evt) => {
-          const label = evt.detail.label;
-          let url = '';
-
-          if (label === 'Monalisa') url = './Textures/Quadros/monalisa.webp';
-
-          tela.setAttribute('tela', 'imagem', url);
-        });
-      });
     </script>
 
   </body>

@@ -1,40 +1,325 @@
-      <a-entity
-        id="escultura1"
-        gltf-model="url(./Textures/Obras_arte/marble_classical_statue_man_01__3d_printable/scene.gltf)"
-        position="4 1.7 -5"
-        scale="3 3 3"
-        rotation="0 0 0">
-      </a-entity>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercicio 2</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-teleport-controls@1.0.0/dist/aframe-teleport-controls.min.js"></script>
+    <script src="menu.js"></script>
+    <script src="botao.js"></script>
+    <script src="tela.js"></script>
+
+  </head>
+
+  <body>
+    <a-scene>
+
+<a-entity id="cameraRig" position="1 0.65 0" movement-controls="fly: false; controls: gamepad">
+  <a-camera look-controls="enabled: true"></a-camera>
+
+  <a-entity hand-controls="hand: left"></a-entity>
+  <a-entity hand-controls="hand: right"></a-entity>
+</a-entity>
+
+
+      <a-plane
+        id="chao"
+        class="ground"
+        position="0 0 0"
+        rotation="-90 0 0"
+        width="10"
+        height="20"
+        src="./Textures/Wood_Cherry_Original_baseColor.jpeg"
+        repeat="10 20">
+      </a-plane>
+
+      <a-plane
+        id="teto"
+        position="0 5 0"
+        rotation="90 0 0"
+        width="10"
+        height="20"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="10 20">
+      </a-plane>
+      
+      <a-plane 
+        id="frente"
+        position="0 2.5 -10"
+        rotation="0 0 0"
+        width="10"
+        height="5"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="8 4">
+      </a-plane>
+
+      <a-plane 
+        id="esquerda"
+        position="-5 2.5 0"
+        rotation="0 90 0"
+        width="20"
+        height="5"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="8 4">
+      </a-plane>
+
+      <a-plane 
+        id="direita"
+        position="5 2.5 0"
+        rotation="0 -90 0"
+        width="20"
+        height="5"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="8 4">
+      </a-plane>
+
+      <a-plane  
+        id="tras"
+        position="0 2.5 10"
+        rotation="0 180 0"
+        width="10"
+        height="5"
+        src="./Textures/Cladding_Stucco_White_baseColor.jpeg"
+        repeat="8 4">
+      </a-plane>
+
+      <a-light 
+        type="point"
+        color="#ffdca8"
+        intensity="2"
+        distance="10"
+        position="0 4 0">
+      </a-light>
+
+      <a-light 
+        type="point"
+        color="#ffdca8"
+        intensity="2"
+        distance="10"
+        position="0 4 5">
+      </a-light>
+
+      <a-light 
+        type="point"
+        color="#ffdca8"
+        intensity="2"
+        distance="10"
+        position="0 4 -5">
+      </a-light>
 
       <a-entity
-        id="escultura2"
-        gltf-model="url(./Textures/Obras_arte/marble_classical_statue_man_02__3d_printable/scene.gltf)"
-        position="4 1.7 5"
-        scale="3 3 3"
-        rotation="0 0 0">
+        id="menu" 
+        menu position="0 1 0" 
+        rotation="-45 90 0" 
+        event-manager>
       </a-entity>
 
       <a-box
-        id="caixa-busto"
-        position="4 0.25 0"
-        width="1"
-        height="0.5"
-        depth="1"
-        src="./Obras_arte/marble_classical_bust_-_ia__3d_printable/textures/Material_baseColor.png">
-      </a-box>
+        position="0 0.5 0"
+        rotation="90 0 0"
+        width="0.05"
+        height="0.9"
+        depth="0.95"
+        color="white"
+      ></a-box>
 
-      <a-entity
-        id="busto"
-        gltf-model="url(./Textures/Obras_arte/marble_classical_bust_-_ia__3d_printable/scene.gltf)"
-        position="4 1.5 0"
-        scale="2 2 2"
-        rotation="0 270 0">
+      <a-entity 
+        id="tela" 
+        tela
+        position="-4.9 3 0"
+        scale="2.5 2.5 2.5"
+        rotation="0 90 0">
       </a-entity>
 
-      <a-entity
-        id="escudo"
-        gltf-model="url(./Textures/Obras_arte/escudo_heraldico_en_ayerbe/scene.gltf)"
-        position="0 2 -9.8"
-        scale="2 2 2"
-        rotation="13 0 0">
-      </a-entity>
+        <a-entity 
+          botao="label: Monalisa" 
+          position="-0.15 1.175 0.8"
+          rotation="-45 90 0">
+        </a-entity>
+
+    </a-scene> 
+
+    <script>
+      const tela = document.querySelector('#tela');
+
+      document.querySelectorAll('[botao]').forEach(botao => {
+        botao.addEventListener('botao-clicado', (evt) => {
+          const label = evt.detail.label;
+          let url = '';
+
+          if (label === 'Monalisa') url = './Textures/Quadros/monalisa.webp';
+
+          tela.setAttribute('tela', 'imagem', url);
+        });
+      });
+    </script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AFRAME.registerComponent('botao', {
+  schema: {
+    label: {default: 'label'},
+    width: {default: 0.15},
+    height: {default: 0.15},
+    depth: {default: 0.02},
+    color: {default: 'black'},
+    toggleable: {default: false}
+  },
+
+  init: function () {
+    var el = this.el;
+    var data = this.data;
+
+    el.setAttribute('geometry', {
+      primitive: 'box',
+      width: data.width,
+      height: data.height,
+      depth: data.depth
+    });
+    el.setAttribute('material', {color: data.color});
+    el.setAttribute('pressable', '');
+
+    var labelEl = this.labelEl = document.createElement('a-entity');
+    labelEl.setAttribute('position', '-0.6 0 0.03');
+    labelEl.setAttribute('text', {
+      value: data.label,
+      color: 'black',
+      align: 'right',
+      width: 3
+    });
+    labelEl.setAttribute('scale', '0.75 0.75 0.75');
+    el.appendChild(labelEl);
+
+    this.bindMethods();
+
+    el.addEventListener('pressedstarted', this.onPressedStarted);
+    el.addEventListener('pressedended', this.onPressedEnded);
+
+    el.addEventListener('click', this.onPressedStarted);
+  },
+
+  bindMethods: function () {
+    this.onPressedStarted = this.onPressedStarted.bind(this);
+    this.onPressedEnded = this.onPressedEnded.bind(this);
+  },
+
+  onPressedStarted: function () {
+    this.el.setAttribute('material', {color: 'pink'});
+
+    this.el.emit('botao-clicado', {label: this.data.label});
+  },
+
+  onPressedEnded: function () {
+    this.el.setAttribute('material', {color: this.data.color});
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AFRAME.registerComponent('tela', {
+  schema: {
+    largura: {default: 2},
+    altura: {default: 1.2},
+    imagem: {default: ''}
+  },
+
+  init: function () {
+    var el = this.el;
+
+    var telaEl = document.createElement('a-plane');
+    telaEl.setAttribute('width', this.data.largura);
+    telaEl.setAttribute('height', this.data.altura);
+    telaEl.setAttribute('material', {
+      color: '#FFFFFF',
+      src: this.data.imagem || '',
+      shader: 'flat'
+    });
+
+    var molduraEl = document.createElement('a-box');
+    molduraEl.setAttribute('width', this.data.largura + 0.05);
+    molduraEl.setAttribute('height', this.data.altura + 0.05);
+    molduraEl.setAttribute('depth', 0.05);
+    molduraEl.setAttribute('material', {color: '#222'});
+    molduraEl.setAttribute('position', '0 0 -0.03');
+
+    el.appendChild(molduraEl);
+    el.appendChild(telaEl);
+
+    this.telaEl = telaEl;
+  },
+
+  update: function (oldData) {
+    if (oldData.imagem !== this.data.imagem && this.data.imagem) {
+      this.telaEl.setAttribute('material', 'src', this.data.imagem);
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AFRAME.registerComponent('menu', {
+  init: function () {
+    var el = this.el;
+    var menuBackGroundEl = document.createElement('a-entity');
+    menuBackGroundEl.setAttribute('geometry', {
+      primitive: 'box',
+      width: 2,
+      height: 1,
+      depth: 0.06
+    });
+    menuBackGroundEl.setAttribute('material', {
+      color: 'white'
+    });
+    menuBackGroundEl.setAttribute('position', '0 0 -0.025');
+    el.appendChild(menuBackGroundEl);
+  }
+});
