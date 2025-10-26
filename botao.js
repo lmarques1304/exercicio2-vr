@@ -17,6 +17,7 @@ AFRAME.registerComponent('botao', {
     caixa.setAttribute('depth', d.depth);
     caixa.setAttribute('material', { color: d.color });
     caixa.setAttribute('position', '0 0 0');
+    caixa.classList.add('clickable');
     el.appendChild(caixa);
 
     if (d.label) {
