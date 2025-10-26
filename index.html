@@ -13,6 +13,10 @@
   <body>
     <a-scene>
 
+      <a-assets>
+        <img id="quadro1" src="./Textures/Quadros/monalisa.webp">
+      </a-assets>
+
       <a-plane
         id="chao"
         class="ground"
@@ -81,6 +85,30 @@
         distance="10"
         position="0 4 0">
       </a-light>
+
+      <a-entity 
+        id="tela" 
+        tela position="0 2.5 -4.9"
+        scale="2.5 2.5 2.5" 
+        rotation="0 0 0">
+      </a-entity>
+
+      <a-entity 
+        id="menu" 
+        menu position="0 0.8 -2"
+        rotation="-45 0 0">
+      </a-entity>
+
+      <a-entity 
+        position="0 0.8 -1.99"
+        rotation="-45 0 0">
+        <a-entity botao="label:Quadro 1" data-imagem="#quadro1" position="-0.8 0.35 0.03"></a-entity>
+        <a-entity botao="label:Quadro 2" position="-0.8 0 0.03"></a-entity>
+        <a-entity botao="label:Quadro 3" position="-0.8 -0.35 0.03"></a-entity>
+        <a-entity botao="label:Quadro 4" position="0.2 0.35 0.03"></a-entity>
+        <a-entity botao="label:Quadro 5" position="0.2 0 0.03"></a-entity>
+        <a-entity botao="label:Quadro 6" position="0.2 -0.35 0.03"></a-entity>
+      </a-entity>
 
     </a-scene> 
 
