@@ -13,6 +13,16 @@
   <body>
     <a-scene>
 
+      <a-entity camera look-controls wasd-controls position="0 1.6 0">
+        <a-entity 
+          cursor="fuse: false; rayOrigin: mouse" 
+          raycaster="objects: [botao]" 
+          position="0 0 -0.1"
+          geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.006"
+          material="color: white; shader: flat">
+        </a-entity>
+      </a-entity>
+
       <a-assets>
         <img id="quadro1" src="./Textures/Quadros/monalisa.webp">
       </a-assets>
