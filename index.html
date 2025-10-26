@@ -13,12 +13,14 @@
   <body>
     <a-scene>
 
-      <a-cursor
-        fuse="false"
-        raycaster="objects: .clickable"
-        material="color: white; shader: flat"
-        geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.008">
-      </a-cursor>
+      <a-entity camera look-controls position="0 1.6 0">
+        <a-cursor 
+          rayOrigin="mouse"
+          fuse="false"
+          material="color: white; shader: flat"
+          geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.008">
+        </a-cursor>
+      </a-entity>
 
       <a-entity laser-controls="hand: right"></a-entity>
 
@@ -118,8 +120,6 @@
         <a-entity botao="label:Quadro 5" position="0.2 0 0.03"></a-entity>
         <a-entity botao="label:Quadro 6" position="0.2 -0.35 0.03"></a-entity>
       </a-entity>
-
-      <a-entity id="rig" movement-controls="enabled: false"></a-entity>
 
     </a-scene> 
 
