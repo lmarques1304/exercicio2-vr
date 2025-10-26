@@ -30,7 +30,17 @@ AFRAME.registerComponent('botao', {
       el.appendChild(texto);
     }
 
+    el.addEventListener('mouseenter', () => {
+      console.log('Cursor passou por cima!');
+      caixa.setAttribute('material', 'color', '#ff0000');
+    });
+
+    el.addEventListener('mouseleave', () => {
+      caixa.setAttribute('material', 'color', d.color);
+    });
+
     el.addEventListener('click', () => {
+      console.log('Botão clicado!');
       const imagem = el.getAttribute('data-imagem');
       const tela = document.querySelector('#tela');
       if (tela && imagem) {
