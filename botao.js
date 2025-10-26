@@ -16,8 +16,6 @@ AFRAME.registerComponent('botao', {
     caixa.setAttribute('height', d.height);
     caixa.setAttribute('depth', d.depth);
     caixa.setAttribute('material', { color: d.color });
-    caixa.setAttribute('position', '0 0 0');
-    caixa.classList.add('clickable');
     el.appendChild(caixa);
 
     if (d.label) {
@@ -31,21 +29,29 @@ AFRAME.registerComponent('botao', {
     }
 
     el.addEventListener('mouseenter', () => {
-      console.log('Cursor passou por cima!');
       caixa.setAttribute('material', 'color', '#ff0000');
+      const imagemId = el.getAttribute('data-imagem');
+      if (imagemId) {
+        const antigo = document.querySelector('#quadroAtivo');
+        if (antigo) antigo.parentNode.removeChild(antigo);
+
+        const quadro = document.createElement('a-image');
+        quadro.setAttribute('id', 'quadroAtivo');
+        quadro.setAttribute('src', imagemId);
+        quadro.setAttribute('width', '2');
+        quadro.setAttribute('height', '1.5');
+        quadro.setAttribute('position', '0 2 -2.5');
+        quadro.setAttribute('rotation', '0 0 0');
+        quadro.setAttribute('side', 'double');
+
+        document.querySelector('a-scene').appendChild(quadro);
+      }
     });
 
     el.addEventListener('mouseleave', () => {
       caixa.setAttribute('material', 'color', d.color);
-    });
-
-    el.addEventListener('click', () => {
-      console.log('Botão clicado!');
-      const imagem = el.getAttribute('data-imagem');
-      const tela = document.querySelector('#tela');
-      if (tela && imagem) {
-        tela.setAttribute('tela', 'imagem', imagem);
-      }
+      const antigo = document.querySelector('#quadroAtivo');
+      if (antigo) antigo.parentNode.removeChild(antigo);
     });
   }
 });

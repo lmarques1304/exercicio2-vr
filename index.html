@@ -7,6 +7,8 @@
     <script src="menu.js"></script>
     <script src="botao.js"></script>
     <script src="tela.js"></script>
+    <script src="quadros.js"></script>
+
 
   </head>
 
@@ -26,6 +28,11 @@
 
       <a-assets>
         <img id="quadro1" src="./Textures/Quadros/monalisa.webp">
+        <img id="quadro2" src="./Textures/Quadros/ogrito.webp">
+        <img id="quadro3" src="./Textures/Quadros/noiteestrelada.webp">
+        <img id="quadro4" src="./Textures/Quadros/Guernica.webp">
+        <img id="quadro5" src="./Textures/Quadros/salvadordali.webp">
+        <img id="quadro6" src="./Textures/Quadros/meninadobrincodeperola.jpg">
       </a-assets>
 
       <a-plane
@@ -114,14 +121,12 @@
         position="0 0.8 -1.99"
         rotation="-45 0 0">
         <a-entity botao="label:Quadro 1" data-imagem="#quadro1" position="-0.8 0.35 0.03"></a-entity>
-        <a-entity botao="label:Quadro 2" position="-0.8 0 0.03"></a-entity>
-        <a-entity botao="label:Quadro 3" position="-0.8 -0.35 0.03"></a-entity>
-        <a-entity botao="label:Quadro 4" position="0.2 0.35 0.03"></a-entity>
-        <a-entity botao="label:Quadro 5" position="0.2 0 0.03"></a-entity>
-        <a-entity botao="label:Quadro 6" position="0.2 -0.35 0.03"></a-entity>
+        <a-entity botao="label:Quadro 2" data-imagem="#quadro2" position="-0.8 0 0.03"></a-entity>
+        <a-entity botao="label:Quadro 3" data-imagem="#quadro3" position="-0.8 -0.35 0.03"></a-entity>
+        <a-entity botao="label:Quadro 4" data-imagem="#quadro4" position="0.2 0.35 0.03"></a-entity>
+        <a-entity botao="label:Quadro 5" data-imagem="#quadro5" position="0.2 0 0.03"></a-entity>
+        <a-entity botao="label:Quadro 6" data-imagem="#quadro6" position="0.2 -0.35 0.03"></a-entity>
       </a-entity>
-
-    </a-scene> 
 
     <script>
 
